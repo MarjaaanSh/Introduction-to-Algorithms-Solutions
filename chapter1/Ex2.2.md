@@ -1,21 +1,21 @@
 Given that T(n) represents the sum of the first $n$ terms, it can be expressed as:
 
 $T(n) = a_1 + a_2 + ... + a_n$
+
 $T(n) = (c_1 + c_2) + (2c_1 + c_2) + \ldots + (nc_1 + c_2)$
 
 According to the book's analysis in Section 2.2, T(n) is a quadratic function, and we can express it as:
 
 $T(n) = k_1 n^2 + k_2 n + k_3$
 
-Now, let's determine the values of the constants k_1, k_2, and k_3.
+Now, let's determine the values of the constants $k_1$, $k_2$, and $k_3$.
 
-\begin{enumerate} 
-\item For $n = 0$, we have $T(0) = 0$, which implies that $k_3 = 0$.
+1. For $n = 0$, we have $T(0) = 0$, which implies that $k_3 = 0$.
 
-\item For $n = 1$, we find that $T(1) = c_1 + c_2$. Thus, we can express $k_1$ in terms of $c_1, c_2$, and $k2$
+2. For $n = 1$, we find that $T(1) = c_1 + c_2$. Thus, we can express $k_1$ in terms of $c_1, c_2$, and $k2$
 as follows: $k_1 = c_1 + c_2 - k_2$.
 
-\item For $n = 2$, we get $T(2) = 3c_1 + 2c_2$, which can be equated to $4k_1 + 2k_2$. This allows us to express 
+3. For $n = 2$, we get $T(2) = 3c_1 + 2c_2$, which can be equated to $4k_1 + 2k_2$. This allows us to express 
 $k_2$ in terms of $c_1$ and $c_2$ as follows: $k_2 = 1/2(c_1 + 2c_2)$, and we can use the previously determined value
 of $k_1$.
 

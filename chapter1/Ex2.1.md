@@ -3,7 +3,7 @@ Proof of:
 
 $$(x - y) | (x^{k+1} - y^{k+1})$$
 
-### Solution:
+#### Solution:
 We want to prove that if $x^n - y^n$ is divisible by $x - y$ for some positive integer $n$, then $x^{n+1} - y^{n+1}$ is
 also divisible by $x - y$. We will use mathematical induction to prove this.
 

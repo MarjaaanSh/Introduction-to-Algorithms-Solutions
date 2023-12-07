@@ -1,7 +1,7 @@
-### Ex2.2: 
+#### Ex2.2: 
 Find the sum of $a_1 + a_2 + ... + a_n$, where $a_n = c_1n+c_2$, and $c_1$ and $c_2$ are constants. 
 
-### Solution:
+#### Solution:
 Given that T(n) represents the sum of the first $n$ terms, it can be expressed as:
 
 $$T(n) = a_1 + a_2 + ... + a_n$$

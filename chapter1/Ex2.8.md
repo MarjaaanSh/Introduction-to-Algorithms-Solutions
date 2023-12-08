@@ -44,5 +44,5 @@ This completes the proof.
 
 Note that I used this link to find the solution to this question. :)
 
-[Ex2.8 - StackExchange] (https://math.stackexchange.com/questions/696917/prove-that-for-all-n-in-mathbbn-2n-1an-bn-ge-a-bn)
+[Ex2.8 - StackExchange](https://math.stackexchange.com/questions/696917/prove-that-for-all-n-in-mathbbn-2n-1an-bn-ge-a-bn)
 

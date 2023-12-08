@@ -3,23 +3,28 @@ Prove that there are two numbers in a set of $n+1$ numbers out of the first $2n$
 
 #### Solution:
 
-For $n = 1$, consider the set ${1, 2}$. Here, 1 divides 2, and the base case holds.
-
+For $n = 1$, consider the set {1, 2}. Here, 1 divides 2, and the base case holds.
 
 Inductive hypothesis: 
 
-Assuming $n = k$, there exists two numbers in the set of $k + 1$ numbers out of the set ${1, 2, ..., 2k-1, 2k}$, where one of them divides the other. 
+Assume that for some positive integer $k$, there exist two numbers in the set of $k + 1$ numbers chosen from 1, 2, ..., 2k-1, 2k, where one divides the other.
 
 Inductive step:
 
-Considering $n = k + 1$, we want to prove that there exists $a$ and $b$ in $A$, a set of $k + 2$ numbers from ${1, 2, ..., 2k, 2k+1, 2k+2}$, where a | b. 
+Now, consider $n = k + 1$. We aim to show that there exist $a$ and $b$ in set $A$, containing $k + 2$ numbers from ${1, 2, ..., 2k, 2k+1, 2k+2}$, such that $a | b$.
+ 
 
-There exists three cases:
+We explore three cases:
 
-1. $max(A) = 2k$, then based on the inductive hypothesis, the proof is complete. 
+1. If $max(A) = 2k$, the inductive hypothesis implies the existence of two such numbers, completing the proof.
 
-2. $max(A) > 2k $ and only one of the $2k+1$ or $2k+2$ are in $A$. Then if we remove them from $A$, we would have $B$ with $k$ numbers selected from $2k$ first integers. Thus, based on the inductive hypothesis, the proof is complete.
+2. If $max(A) > 2k$ and only one of $2k+1$ or $2k+2$ is in $A$, removing them leaves us with set $B$ containing $k+1$ numbers selected from the first $2k$ integers. The inductive hypothesis then completes the proof.
 
-3. $max(A) > 2k$ and both $2k+1$ and $2k+2$ are in $A$. In this case, if $k+1$ is in $A$, because $k+1 | 2k + 2$, again the proof is complete. If it is not in $A$, then we remove $2k+2$ from $A$ and replace it with $k+1$, making another set, $B$. We will proove that there exists a and b in $B$, where $a|b$. If $b \neq n+1$, then since $a$ and $b$ are in $A$ and the proof is complete. If $b = n + 1$, then since $a | (n+1)$ and $(n+1) | (2n+2)$, then $a | (2n+2)$ and the proof is complete. It should be noted that $a$ could not be $n+1$ since the first number that it divides is $2n+2$ which is not in the set.
+3. If $max(A) > 2k$ and both $2k+1$ and $2k+2$ are in $A$, two sub-cases arise:
+   
+    a. If $k+1$ is in $A$, then $k+1 | 2k + 2$, and the proof is complete.
+  
+    b. If $k+1$ is not in $A$, replace $2k+2$ with $k+1$, creating set $B$. Now, prove that there exist $a$ and $b$ in $B$ such that $a | b$. If $b \neq k+1$, the proof is complete as $a$ and $b$ belong to $A$. If $b = k + 1$, then $a | (k+1)$, and $(k+1) | (2k+2)$, implying        $a | (2k+2)$. Note that $a$ cannot be $k+1$ since the first number it divides is $2k+2$, which is not in the set.
 
-Thus, we proved the inductive hypothesis. 
+
+Thus, the inductive hypothesis is proven.

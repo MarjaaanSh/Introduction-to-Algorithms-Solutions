@@ -5,7 +5,7 @@ directly above it, and the sides of the triangle are 1s.
 
 #### solution:
 
-If s(i) is the sum for the $i^{th}$ row, it could be observed that:
+Let s(i) represent the sum for the $i^{th}$ row. It can be observed that:
 
 $$s(1) = 2^0$$
 
@@ -21,13 +21,13 @@ Thus, we can consider the inductive hypothesis as:
 
 $$s(i) = 2^{i-1}$$
 
-Base case, $i = 1$, $s(1) = 1$, holds.
+For the base case, when $i = 1$, $s(1) = 1$.
 
 Inductive step: We will prove that for the row $i+1$:
 
 $$s(i+1) = 2^{i}$$
 
-Row i has i elements. The difference between the $e_{(i+1)j}$, which is the $j^{th}$ element in row $i+1$ with its counter part in 
+Row i has i elements. Also, the difference between the $e_{(i+1)j}$, which is the $j^{th}$ element in row $i+1$ with its counter part in 
 the previous row equals e_{i(j-1)}. Thus, the difference between the sum of the $(i+1)^{th}$ and $i^{th}$ row is:
 
 $$s(i+1) - s(i) = 0 + e_{i1} + e_{i2} + ... + e_{ii} + 1 = s(i)$$
@@ -40,4 +40,4 @@ Using our assumption for $s(i)$:
 
 $$s(i+1) = 2 \times 2^{i-1} = 2^i$$
 
-Which concludes the proof. 
+This concludes the proof. 

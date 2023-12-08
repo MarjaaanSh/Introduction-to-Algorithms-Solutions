@@ -28,3 +28,7 @@ We explore three cases:
 
 
 Thus, the inductive hypothesis is proven.
+
+To find the proof of the third case, I referred to this link:
+
+[Ex2.7 - StackExchange]([https://math.stackexchange.com/questions/1493253/prove-using-induction-that-from-a-set-of-n1-numbers-from-1-2-2n-at-l])

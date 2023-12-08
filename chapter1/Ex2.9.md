@@ -32,9 +32,14 @@ $$r3(sd(k) + 1) = r3(sd(k+1))$$
 This confirms the inductive hypothesis.
 
 b. The last digit of k is 9. In this scenario, if we add 1 to k, the last digit becomes 0, and 1 is added to the second last digit. 
+
 The remainder of the last digit of k and k+1, which are 9 and 0, respectively, to 3 is 0. Moreover, for k+1, 1 is added to the second 
 last digit. Thus, we can write:
 
 $$r3(sd(k+1)) = r3(sd(k)) + 1$$
 
 On the other hand, $r3(sd(k)) + 1 = r3(sd(k) + 1)$. Thus, we have demonstrated $r3(sd(k) + 1) = r3(sd(k+1))$. This concludes the proof.
+
+Note that to find the proof, I referred to this link:
+
+[Joe Schafer's Blog](https://blog.d46.us/intro-algo-chap-2/)

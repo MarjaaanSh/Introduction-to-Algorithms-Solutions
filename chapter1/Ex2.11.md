@@ -2,7 +2,7 @@
 Find and prove an expression for the some of the $i^{th}$ row of a triangle in which each element of a row is the sum of the three elements 
 directly above it.
 
-#### solution:
+#### Solution:
 
 Let s(i) represent the sum for the $i^{th}$ row. It can be observed that:
 

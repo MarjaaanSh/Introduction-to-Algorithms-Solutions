@@ -3,7 +3,7 @@
 Find and prove an expression for the some of the $i^{th}$ row of Pascal triangle. In this triangle, each entry is the sum of the two entries 
 directly above it, and the sides of the triangle are 1s. 
 
-#### solution:
+#### Solution:
 
 Let s(i) represent the sum for the $i^{th}$ row. It can be observed that:
 

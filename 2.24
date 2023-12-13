@@ -1,0 +1,8 @@
+#### Ex2.23:
+
+The lattice points in the plane are the points with integer coordinates. Let $P$ be a polygon that does not cross itself such that all of 
+its vertices are lattice points (see Fig. 2.8). Let $p$ be the number of lattice points that are on the boundary of the polygon 
+(including its vertices), and let q be the number of lattice points that are inside the polygon. Prove that the area of the polygon is:
+
+$$p/2 +q -1$$
+

@@ -4,5 +4,13 @@ The lattice points in the plane are the points with integer coordinates. Let $P$
 its vertices are lattice points (see Fig. 2.8). Let $p$ be the number of lattice points that are on the boundary of the polygon 
 (including its vertices), and let q be the number of lattice points that are inside the polygon. Prove that the area of the polygon is:
 
-$$p/2 +q -1$$
+$$p/2 + q -1$$
+
+#### Solution:
+
+First consider induction on $p$, adding a point on the lattice means adding half of an square which has the $\frac{1}{2}$ of area. On the 
+other hand, if we substitute $p+1$ instead of $p$ to the formula, this will be increased by $\frac{1}{2}$, as well. This completes the 
+induction on $p$. 
+
+Then, for induction on $q$, consider decreasing the q
 

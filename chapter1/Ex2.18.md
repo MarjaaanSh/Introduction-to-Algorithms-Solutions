@@ -9,7 +9,8 @@ A unit-sized cycle is a cycle in which the maximum distance between any pair of 
 
 For $n=1$ and $n=2$, there is no cycle, so the statement is trivially true. 
 
-For $n\geq 3$, assume the result holds for $n-1$ points. Remove the $n^{th}$ point, leaving $n-1$ points. By the induction hypothesis, these 
-points are contained in a unit-sized cycle. Now, adding the $n^{th}$ point back in, based on the assumption of the question, any two points 
-with this new point should be a part of unit-sized cycle. Thus, the distance between this point and any other two points (which mean all
-other points) is 1, and this puts all of the points in a unit-sized cycle.This completes the proof.
+Assume the induction hypothesis holds for a graph with the desired property with $n$ vertices, meaning that all of its vertices are contained in a unit-sized cycle. This implies that the distance between any pair of vertices in the graph is 1.
+
+Now, let's add the $(n+1)^{th}$ vertex, $v$. To prove the induction hypothesis for the extended graph, we need to show that the distance between $v$ and any other vertex from the original graph is also 1.
+
+To achieve this, first we need to establish the desired property in the new graph. Thus, we should include $v$ and any pair of remaining vertices in unit-sized cycle. Since any two vertices out of the original graph have a distance of one between them, we only need to add two edges between $v$ and each of those two vertices. Therefore, there should be one edge between $v$ and each of those $n$ vertices. This ensures that the distance between $v$ and all of $n$ vertices is one, completing the induction step and thus the proof.

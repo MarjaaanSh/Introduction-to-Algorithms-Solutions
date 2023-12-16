@@ -19,3 +19,7 @@ induction hypothesis, the $k$ subtrees of $T^\prime$ have at least one vertex in
 
 Now, reintroduce the removed leaf node $v$. Since the vertices of subtrees in $T^\prime$ are a subset of the vertices of subtrees in $T$, 
 they share at least one vertex in common. Therefore, the $k$ subtrees of $T$ also have at least one common vertex, and the proof is complete.
+
+Note that the solution is written after reading this solution:
+
+[AMS 550.472/672: Graph Theory - Homework Problems - Week IV](https://www.ams.jhu.edu/~abasu9/AMS_550-472-672/HW-4-sol.pdf)

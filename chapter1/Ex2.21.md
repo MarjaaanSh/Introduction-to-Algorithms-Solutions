@@ -5,8 +5,7 @@ neighboring regions have the same color.
 
 #### Solution:
 
-We prove by induction on the number of regions. If there is only one region, it can be colored with a single color, assuming that in planar 
-maps, we do not need to color the outer surface. 
+We prove by induction on the number of regions. If there is only one region, it can be colored with two colors. 
 
 To begin the reduction step, start from a vertex $v$ and remove one of the regions by continuing the path until reaching $v$ again. Since we traversed a cycle, two edges were removed from each vertex, and the reduced planar map maintains the desired property, vertices still have even degree. Thus, based on the induction hypothesis, it can be colored with two colors.
 

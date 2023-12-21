@@ -6,20 +6,19 @@ as is done in the sectionon Gray codes.)
 
 #### Solution:
 
-For base case, $n=1$:
+Base case, $n=1$:
 
 $$F(1)^2+F(1+1)^2= 1 + 1 = 2$$
 
 $$F(2\times1 + 1) = F(3) = 2$$
 
-Thus, the formula is true. 
+Thus, the formula holds for the base case.
 
-For inductive step, we assume that $F(n)^2+F(n+1)^2=F(2n+1)$ is true, and we try to prove it for $n + 1$:
+For inductive step, assume that $F(n)^2+F(n+1)^2=F(2n+1)$ is true for some arbitrary $n$, and we aim to prove it for $n + 1$:
 
  $$F(n+1)^2+F(n+2)^2=F(2n+3) \tag{1}$$
 
- 
-We start from the assumption, aiming to create the left handside of the above equation:
+Starting from the assumption, we create the left handside of equation $(1)$:
 
 $$F(n)^2+F(n+1)^2=F(2n+1)$$
 
@@ -31,16 +30,16 @@ Thus, this equation must be true:
 
 $$ F(2n+1) - F(n)^2 + F(n+2)^2 = F(2n+3)$$
 
-or:
+which simplifies to:
 
 $$F(2n+3)-F(2n+1) = F(n+2)^2 - F(n)^2$$
 
-Which is equivalent to:
+This is equivalent to:
 
 $$F(2n+2) = F(n+2)^2 - F(n)^2 \tag{2}$$
 
-Thus, for (1) to be true, (2) should also be true. If we assume (2) is true, then we already proved (1) by induction. Now, we assume (1) is 
-true and we try to prove (2) by induction. 
+Thus, for (1) to be true, (2) should also be true. Assuming (2) is true, we have already proven (1) by induction. Now, assuming (1) is 
+true, we aim to prove (2) by induction. 
 
 For $n=1$:
 
@@ -56,7 +55,7 @@ So, we continue by expanding $F(2n+4)$:
 
 $$F(2n+4) = F(2n+3) + F(2n+2)$$
 
-We use $(1)$ as the substitution for $F(2n+3)$ and $(2)$ for $F(2n+2)$:
+Using $(1)$ as the substitution for $F(2n+3)$ and $(2)$ for $F(2n+2)$:
 
 $$
 \begin{aligned}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #### Ex2.9:
 Prove that a number is divisible by 3, if and only if the sum of its digits is divisible by 3.
 

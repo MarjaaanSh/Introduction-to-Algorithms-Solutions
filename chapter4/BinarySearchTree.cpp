@@ -13,15 +13,22 @@ class Node{
 
 class BinarySearchTree{
     public:
-        Node* root;
+        Node* root = new Node();
         Node* search(Node* &root, int &key);
         void searchKey(int &key);
-        void displayTree(Node* &root);
-
-    BinarySearchTree(Node* &root): root(root){}
-
-
+        void addKey(int &key);
+        void displayTree();
+        void test(vector<int> &keys);
 };
+
+void BinarySearchTree::test(vector<int> &keys){
+
+    for(int i = 0; i < keys.size(); i++){
+        addKey(keys[i]);
+    }
+    
+    
+}
 
 void BinarySearchTree::searchKey(int &key){
     Node* key_ptr = search(root, key);
@@ -40,52 +47,65 @@ Node* BinarySearchTree::search(Node* &key_ptr, int &key){
         return search(key_ptr->right, key);
 }
 
+void BinarySearchTree::addKey(int &key){
 
-void BinarySearchTree::displayTree(Node* &root){
-    vector<Node*> queue;
+    if (root == nullptr){
+        root = new Node();
+        root->key = key;
+        return;
+    }    
+    Node* current = root;
+    Node* next = root;
+    Node* parent;
+    cout << root->key << endl;
+    // while (next != nullptr) {
+    //     if(key < current->key)
+    //         {next = current->left;}
+    //     else
+    //         {next = current->right;}
+    //     parent = current;
+    //     current = next;
+    // }
+
+    // if(key < parent->key)
+    //     {parent->left = new Node();
+    //     parent->left->key = key ;}
+    // else
+    //     {parent->right = new Node();
+    //     parent->right->key = key ;}
+
+    return;
+}
+
+void BinarySearchTree::displayTree(){
     int idx = 0;
     Node* current = root;
-    while(current != nullptr){
+    vector<Node*> queue = {current};
+    while(idx < queue.size()){
         cout << current->key << ", " ;
-        queue.push_back(current->left);
-        queue.push_back(current->right);
-        current = queue[idx];
+        if(current->left != nullptr)
+            queue.push_back(current->left);
+        if(current->right !=nullptr)
+            queue.push_back(current->right);
         idx ++;
+        current = queue[idx];
     }
     cout << endl;
 
 }
 int main()
-{ // 8: 5, 9
-  // 5: 2, 6
-  // 9: 7, 11
+{ 
+    vector<int> keys = {8, 5};//, 9, 2, 6, 7, 11};
+    BinarySearchTree bst;
+    bst.test(keys);
+    // bst.displayTree();
 
-    Node* root = new Node();
-    root -> key = 8;
-
-    root -> left = new Node();
-    root -> right = new Node();
-
-    root -> left -> key = 5;
-    root -> right -> key = 9;
-
-    root -> left -> left = new Node();
-    root -> left -> right = new Node();
-
-    root -> left -> left -> key = 2;
-    root -> left -> right -> key = 6;
-
-    root -> right -> left = new Node();
-    root -> right -> right = new Node();
-
-    root -> right -> left -> key = 7;
-    root -> right -> right -> key = 11;
-
-    BinarySearchTree bst(root);
-    bst.displayTree(root);
-
-    int key = -12;
-    bst.searchKey(key);    
+    // int key = 4;
+    // bst.addKey(key);
+    // bst.displayTree();
+    
+    //key = 2;
+    //bst.searchKey(key);    
     
     return 0;
 }

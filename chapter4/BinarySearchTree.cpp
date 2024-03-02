@@ -8,34 +8,46 @@ class Node{
         Node* left;
         Node* right;
 
-    Node(): key(-1), left(nullptr), right(nullptr) {}
+    // Node(): key(-1), left(nullptr), right(nullptr) {}
 };
 
 class BinarySearchTree{
     public:
-        Node* root = new Node();
-        Node* search(Node* &root, int &key);
-        void searchKey(int &key);
+        Node* root;
         void addKey(int &key);
         void displayTree();
-        void test(vector<int> &keys);
+        Node* search(Node* &root, int &key);
+        Node* searchKey(int &key);
+        Node* getPredecessor(int& key);
+        void deleteKey(int& key);
+
+        BinarySearchTree(): root(nullptr){}
 };
-
-void BinarySearchTree::test(vector<int> &keys){
-
-    for(int i = 0; i < keys.size(); i++){
-        addKey(keys[i]);
-    }
-    
+void BinarySearchTree::deleteKey(int& key){
     
 }
+Node* BinarySearchTree::getPredecessor(int& key){
+    Node* key_ptr = searchKey(key);
+    Node* current = key_ptr->left;
+    Node* pred;
+    if ((key_ptr==nullptr) || (current==nullptr)){
+        cout << "Key doesn't exist, or it doesn't have any predecessor!";
+    }
+    else
+    {
+        while(current!=nullptr){
+            pred = current;
+            current = current->right;
+        }
+    }
+    return pred;
+}
 
-void BinarySearchTree::searchKey(int &key){
+Node* BinarySearchTree::searchKey(int &key){
     Node* key_ptr = search(root, key);
     if (key_ptr == nullptr)
         cout << "Not Found!" << endl;
-    else
-        cout << key_ptr << endl;
+    return key_ptr;
 }
 
 Node* BinarySearchTree::search(Node* &key_ptr, int &key){
@@ -55,25 +67,25 @@ void BinarySearchTree::addKey(int &key){
         return;
     }    
     Node* current = root;
-    Node* next = root;
-    Node* parent;
-    cout << root->key << endl;
-    // while (next != nullptr) {
-    //     if(key < current->key)
-    //         {next = current->left;}
-    //     else
-    //         {next = current->right;}
-    //     parent = current;
-    //     current = next;
-    // }
+    Node* parent = root;
+    while (current != nullptr) {
+        parent = current;
+        if(key < current->key)
+            current = current->left;
+        else
+            current = current->right;
+    }
 
-    // if(key < parent->key)
-    //     {parent->left = new Node();
-    //     parent->left->key = key ;}
-    // else
-    //     {parent->right = new Node();
-    //     parent->right->key = key ;}
-
+    if(key < parent->key)
+        {
+            parent->left = new Node();
+            parent->left->key = key ;
+        }
+    else
+        {
+            parent->right = new Node();
+            parent->right->key = key ;
+        }
     return;
 }
 
@@ -95,17 +107,23 @@ void BinarySearchTree::displayTree(){
 }
 int main()
 { 
-    vector<int> keys = {8, 5};//, 9, 2, 6, 7, 11};
+    vector<int> keys = {8, 5, 9, 2, 6, 7, 11};
     BinarySearchTree bst;
-    bst.test(keys);
+
+    for(auto& key: keys)
+    {
+        bst.addKey(key);
+    }
     // bst.displayTree();
 
-    // int key = 4;
-    // bst.addKey(key);
+    int key = 4;
+    bst.addKey(key);
     // bst.displayTree();
     
-    //key = 2;
-    //bst.searchKey(key);    
+    // key = 2;
+    // bst.searchKey(key);    
     
+    key = 7;
+    cout << bst.getPredecessor(key)->key ;
     return 0;
 }

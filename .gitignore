@@ -1,5 +1,6 @@
 test*
 .vscode
 .DS_Store
-bst
-linkedlist
+/chapter4/bst
+/chapter4/linkedlist
+/chapter4/test.cpp

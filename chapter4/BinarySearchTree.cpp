@@ -19,13 +19,30 @@ class BinarySearchTree{
         Node* search(Node* &root, int &key);
         Node* searchKey(int &key);
         Node* getPredecessor(int& key);
+        Node* getFather(int& key);
         void deleteKey(int& key);
 
         BinarySearchTree(): root(nullptr){}
 };
-void BinarySearchTree::deleteKey(int& key){
-    
+
+Node* BinarySearchTree::getFather(int& key){
+    if(root->key==key)
+        return nullptr;
+
+    Node* father = root;
+    Node* child;
+    while(true){
+        if(key < father->key)
+            child = father->left;
+        else
+            child = father->right;
+        if(child->key!=key)
+            father = child;
+        else
+            return father;
+    }
 }
+
 Node* BinarySearchTree::getPredecessor(int& key){
     Node* key_ptr = searchKey(key);
     Node* current = key_ptr->left;
@@ -123,7 +140,10 @@ int main()
     // key = 2;
     // bst.searchKey(key);    
     
-    key = 7;
-    cout << bst.getPredecessor(key)->key ;
+    key = 5;
+    // cout << bst.getPredecessor(key)->key ;
+    key = 11;
+    Node* res = bst.getFather(key);
+    cout << res->key;
     return 0;
 }
